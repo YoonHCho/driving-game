@@ -9,7 +9,29 @@ body {
   height: 100vh;
 }
 
-.car {
+.car-right {
   width: 128px;
   height: 128px;
+}
+
+.car-up {
+  width: 128px;
+  height: 128px;
+  transform: rotate(-90deg);
+}
+
+.car-left {
+  width: 128px;
+  height: 128px;
+  transform: rotate(-180deg);
+}
+
+.car-down {
+  width: 128px;
+  height: 128px;
+  transform: rotate(-270deg);
+}
+
+img {
+  transition: all 0.3s ease-in;
 }
