@@ -1,11 +1,18 @@
 var $car = document.querySelector('.car-right');
 var $img = document.querySelector('img');
 var intId;
-window.addEventListener('keydown', turnCar);
 var movement = 0;
+var moving = false;
+
+window.addEventListener('keydown', turnCar);
 function turnCar(event) {
-  if (event.code === 'Space') {
+  if (event.code === 'Space' && moving === false) {
     intId = setInterval(start, 16);
+    moving = true;
+  } else if (event.code === 'Space' && moving === true) {
+    clearInterval(intId);
+    intId = null;
+    moving = false;
   }
   if (event.code === 'ArrowUp') {
     $car.className = 'car-up';
